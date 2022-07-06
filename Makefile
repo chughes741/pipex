@@ -16,8 +16,8 @@ TFLAG	=	-pg -Wall -Werror -Wextra
 RM		=	rm -rf
 
 # Dir and file names
-NAME	=	push_swap
-DEBUG	=	push_swap_debug
+NAME	=	pipex
+DEBUG	=	pipex_debug
 TEST	=	push_swap_test
 LIBFT	=	libftprintf.a
 LDIR	=	ft_printf/
@@ -25,10 +25,6 @@ SRCDIR	=	src/
 OBJDIR	=	bin/
 SRCS	=	$(wildcard $(SRCDIR)*.c) # Change to file names before sub
 OBJS = $(patsubst $(SRCDIR)%.c,$(OBJDIR)%.o,$(SRCS))
-
-# Test arguments
-T_ARGS	= 	107 926 126 -75 -14 -12 -16 205 715 -46\
-			929 527 966 136 -84 -32 -27 -66 959 165
 
 # Targets
 all: $(LDIR)/$(LIBFT) $(NAME)
@@ -65,13 +61,15 @@ fclean: clean
 re: fclean all
 
 
+# Starts a debugging run
 $(DEBUG): fclean
 	$(HIDE)$(CC) $(DFLAG) -o $(DEBUG) $(SRCS) $(LDIR)$(LIBFT)
 
 debug: $(DEBUG)
-	$(HIDE)./$(DEBUG) $(T_ARGS)
+	$(HIDE)./$(DEBUG)
 
 
+# Generates test files for valgrind and gprof
 $(TEST): fclean
 	$(HIDE)$(CC) $(TFLAG) -o $(TEST) $(SRCS) $(LDIR)$(LIBFT)
 
@@ -83,7 +81,7 @@ leak: $(TEST)
 		--show-leak-kinds=all	\
 		--read-var-info=yes		\
 		--read-inline-info=yes	\
-		./$(TEST) $(T_ARGS)
+		./$(TEST)
 
 time: $(TEST)
 	$(HIDE)clear
