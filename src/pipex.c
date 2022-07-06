@@ -12,7 +12,7 @@
 
 #include "../pipex.h"
 
-int	main(void)
+int	main(int c, char *args[])
 {
 	return (0);
 }
