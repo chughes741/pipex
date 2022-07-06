@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chughes <marvin@42quebec.com>              +#+  +:+       +#+        */
+/*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/06 12:58:16 by chughes           #+#    #+#             */
-/*   Updated: 2022/07/06 13:04:02 by chughes          ###   ########.fr       */
+/*   Created: 2022/03/28 17:09:18 by chughes           #+#    #+#             */
+/*   Updated: 2022/03/28 17:09:27 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#include "libft.h"
 
-# include <fcntl.h>
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdio.h>
-# include <string.h> 
-# include <sys/wait.h>
+void	ft_bzero(void *s, size_t n)
+{
+	size_t	count;
+	char	*str;
 
-# include "ft_printf/ft_printf.h"
-
-#endif
+	str = (char *)s;
+	count = 0;
+	while (count < n)
+	{
+		str[count] = 0;
+		count++;
+	}
+	return ;
+}

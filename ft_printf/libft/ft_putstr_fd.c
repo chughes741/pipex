@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chughes <marvin@42quebec.com>              +#+  +:+       +#+        */
+/*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/06 12:58:16 by chughes           #+#    #+#             */
-/*   Updated: 2022/07/06 13:04:02 by chughes          ###   ########.fr       */
+/*   Created: 2022/03/29 13:45:32 by chughes           #+#    #+#             */
+/*   Updated: 2022/03/29 13:46:10 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#include "libft.h"
 
-# include <fcntl.h>
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdio.h>
-# include <string.h> 
-# include <sys/wait.h>
+void	ft_putstr_fd(char *s, int fd)
+{
+	int	i;
 
-# include "ft_printf/ft_printf.h"
-
-#endif
+	i = 0;
+	while (s[i])
+	{
+		ft_putchar_fd(s[i], fd);
+		i++;
+	}
+	return ;
+}

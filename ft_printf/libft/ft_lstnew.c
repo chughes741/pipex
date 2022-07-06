@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chughes <marvin@42quebec.com>              +#+  +:+       +#+        */
+/*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/06 12:58:16 by chughes           #+#    #+#             */
-/*   Updated: 2022/07/06 13:04:02 by chughes          ###   ########.fr       */
+/*   Created: 2022/03/29 14:24:08 by chughes           #+#    #+#             */
+/*   Updated: 2022/03/29 14:24:52 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#include "libft.h"
 
-# include <fcntl.h>
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdio.h>
-# include <string.h> 
-# include <sys/wait.h>
+t_list	*ft_lstnew(void *content)
+{
+	t_list	*new_list;
 
-# include "ft_printf/ft_printf.h"
-
-#endif
+	new_list = ft_calloc(1, sizeof(t_list));
+	if (new_list == NULL)
+		return (NULL);
+	new_list->content = content;
+	new_list->next = NULL;
+	return (new_list);
+}

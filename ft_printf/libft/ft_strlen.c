@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chughes <marvin@42quebec.com>              +#+  +:+       +#+        */
+/*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/06 12:58:16 by chughes           #+#    #+#             */
-/*   Updated: 2022/07/06 13:04:02 by chughes          ###   ########.fr       */
+/*   Created: 2022/03/28 17:14:17 by chughes           #+#    #+#             */
+/*   Updated: 2022/03/28 17:14:18 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#include "libft.h"
 
-# include <fcntl.h>
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdio.h>
-# include <string.h> 
-# include <sys/wait.h>
+size_t	ft_strlen(const char *str)
+{
+	int		i;
+	size_t	output;
+	char	*ptr;
 
-# include "ft_printf/ft_printf.h"
-
-#endif
+	i = 0;
+	ptr = (char *)str;
+	while (*ptr != '\0')
+	{
+		i++;
+		ptr++;
+	}
+	output = (sizeof(char) * i);
+	return (output);
+}
