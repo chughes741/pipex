@@ -20,6 +20,6 @@
 # include <string.h> 
 # include <sys/wait.h>
 
-# include "ft_printf/ft_printf.h"
+# include "../libft/include/libft.h"
 
 #endif
