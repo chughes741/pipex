@@ -29,6 +29,7 @@
 *.dylib
 
 # Executables
+pipex
 *.exe
 *.out
 *.app
