@@ -22,4 +22,19 @@
 
 # include "../libft/include/libft.h"
 
+// Holds the file descriptors and programs
+typedef struct	s_data {
+	int		fd_input;
+	int		ft_output;
+	t_prog	**progs;
+}			t_data;
+
+// Holds a program name and an array of the arguments
+typedef struct	s_program {
+	char	*name;
+	char	**args;
+}			t_prog;
+
+t_data	*get_data(void);
+
 #endif
