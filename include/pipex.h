@@ -24,9 +24,9 @@
 
 // Holds a program name and an array of the arguments
 typedef struct	s_program {
-	char		*name;
-	char		**args;
-	t_prog		*next;
+	char				*name;
+	char				**args;
+	struct s_program	*next;
 }			t_prog;
 
 // Holds the file descriptors and programs
