@@ -24,15 +24,16 @@
 
 // Holds a program name and an array of the arguments
 typedef struct	s_program {
-	char	*name;
-	char	**args;
+	char		*name;
+	char		**args;
+	t_prog		*next;
 }			t_prog;
 
 // Holds the file descriptors and programs
 typedef struct	s_data {
 	int		fd_input;
-	int		ft_output;
-	t_prog	**progs;
+	int		fd_output;
+	t_prog	*progs;
 }			t_data;
 
 t_data	*get_data(void);
