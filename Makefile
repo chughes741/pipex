@@ -2,11 +2,10 @@
 # Hides calls
 VERBOSE	=	FALSE
 ifeq ($(VERBOSE),TRUE)
-	HIDE =
+	HIDE=
 else
-	HIDE = @
+	HIDE= @
 endif
-
 
 # Compiler and flags
 CC		=	gcc
@@ -14,7 +13,6 @@ CFLAGS	=	-Wall -Werror -Wextra
 DFLAG	=	-D DEBUG -Wall -Werror -Wextra
 TFLAG	=	-pg -Wall -Werror -Wextra
 RM		=	rm -rf
-
 
 # Dir and file names
 NAME	=	pipex
@@ -58,25 +56,25 @@ re: fclean all
 
 
 # Starts a debugging run
-$(DEBUG): fclean
-	$(HIDE)$(CC) $(DFLAG) -o $(DEBUG) $(SRCS) $(LDIR)$(LIBFT)
+$(DEBUG): $(OBJS)
+	$(HIDE)$(CC) $(DFLAG) -o $@ $(OBJS) $(LDIR)$(LIBFT)
 
 db: $(DEBUG)
 	$(HIDE)clear
-	$(HIDE)./$(DEBUG) $(DARGS)
+	$(HIDE)./$< $(DARGS)
 	$(HIDE)cat out.txt
 	$(HIDE)$(RM) out.txt
 
 # Generates test files for valgrind and gprof
-$(TEST): fclean
-	$(HIDE)$(CC) $(TFLAG) -o $(TEST) $(SRCS) $(LDIR)$(LIBFT)
+$(TEST): $(OBJS)
+	$(HIDE)$(CC) $(TFLAG) -o $@ $(OBJS) $(LDIR)$(LIBFT)
 
 leak: $(TEST)
 	$(HIDE)clear
 	$(HIDE)valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all \
-					--read-var-info=yes --read-inline-info=yes ./$(TEST)
+					--read-var-info=yes --read-inline-info=yes ./$<
 
 time: $(TEST)
 	$(HIDE)clear
-	$(HIDE)./$(TEST)
-	$(HIDE)gprof -b -p $(TEST) gmon.out
+	$(HIDE)./$<
+	$(HIDE)gprof -b -p $< gmon.out
