@@ -26,7 +26,7 @@ SRCDIR	=	src/
 SRCS	=	$(wildcard $(SRCDIR)*.c) # Change to file names before sub
 OBJDIR	=	bin/
 OBJS	=	$(patsubst $(SRCDIR)%.c,$(OBJDIR)%.o,$(SRCS))
-
+DARGS	=	in.txt "cat" "wc -w" out.txt
 
 # Targets
 all: $(LDIR)/$(LIBFT) $(NAME)
@@ -61,8 +61,11 @@ re: fclean all
 $(DEBUG): fclean
 	$(HIDE)$(CC) $(DFLAG) -o $(DEBUG) $(SRCS) $(LDIR)$(LIBFT)
 
-debug: $(DEBUG)
-	$(HIDE)./$(DEBUG)
+db: $(DEBUG)
+	$(HIDE)clear
+	$(HIDE)./$(DEBUG) $(DARGS)
+	$(HIDE)cat out.txt
+	$(HIDE)$(RM) out.txt
 
 # Generates test files for valgrind and gprof
 $(TEST): fclean
