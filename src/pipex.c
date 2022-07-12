@@ -17,18 +17,33 @@ int	main(int argc, char *argv[])
 	t_data	*data;
 
 	data = get_data();
-	data->fd_input = open(argv[1], 'r');
-	data->fd_output = open(argv[argc - 1], 'w');
+	data->fd_in = open(argv[1], 'r');
+	data->fd_out = open(argv[argc - 1], 'w');
 
-	char buffer[11];
-	read(data->fd_input, buffer, 10);
-	printf("%s\n", buffer);
-	char buffer2[11];
-	read(data->fd_output, buffer2, 10);
-	printf("%s\n", buffer2);
+
 
 	return (0);
 }
+
+/* Notes
+	0 - parent fd for first child
+	1 - first child fd for parent
+	2 - parent fd for second child
+	3 - second child id for parent
+	.
+	.
+	.
+
+
+
+*/
+
+
+
+
+
+
+
 
 void	child(char *argv[])
 {

@@ -19,6 +19,9 @@ t_data	*get_data(void)
 	if (data == NULL)
 	{
 		data = ft_calloc(1, sizeof(t_data));
+		data->fd_in = -1;
+		data->fd_out = -1;
+		data->n_pipe = -1;
 	}
 	return (data);
 }
