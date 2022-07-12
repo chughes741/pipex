@@ -17,8 +17,8 @@ int	main(int argc, char *argv[])
 	t_data	*data;
 
 	data = get_data();
-	data->fd_in = open(argv[1], 'r');
-	data->fd_out = open(argv[argc - 1], 'w');
+	data->fd_in = open(argv[1], O_RDONLY);
+	data->fd_out = open(argv[argc - 1], O_WRONLY, O_CREAT);
 
 
 
