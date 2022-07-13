@@ -22,7 +22,12 @@ int	main(int argc, char *argv[], char *envp[])
 	i = 0;
 	while (i < data->n_pipe)
 	{
-		if (fork())
+		data->pid[i] = fork();
+		if (data->pid[i] < 0)
+		{
+			perror("fork");
+			exit(1);
+		}
 	}
 	return (0);
 }
