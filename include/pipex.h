@@ -31,5 +31,6 @@ typedef struct	s_data {
 }			t_data;
 
 t_data	*get_data(void);
+void	init_data(int argc, char *argv[]);
 
 #endif

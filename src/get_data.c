@@ -25,3 +25,15 @@ t_data	*get_data(void)
 	}
 	return (data);
 }
+
+void	init_data(int argc, char *argv[])
+{
+	t_data	*data;
+
+	data = get_data();
+	data->n_pipe = argc - 3;
+	data->pipe = ft_calloc(data->n_pipe * 2, sizeof(int));
+	data->fd_in = open(argv[1], O_RDONLY);
+	data->fd_out = open(argv[argc - 1], O_WRONLY, O_CREAT, O_TRUNC);
+	return ;
+}
