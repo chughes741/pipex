@@ -12,7 +12,7 @@
 
 #include "../include/pipex.h"
 
-int	main(int argc, char *argv[])
+int	main(int argc, char *argv[], char *envp[])
 {
 	t_data	*data;
 
