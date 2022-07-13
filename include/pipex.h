@@ -33,5 +33,7 @@ typedef struct	s_data {
 
 t_data	*get_data(void);
 void	init_data(int argc, char *argv[]);
+void	exit_error(char *message);
+void	del_data(void);
 
 #endif
