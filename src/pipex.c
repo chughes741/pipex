@@ -32,15 +32,3 @@ int	main(int argc, char *argv[], char *envp[])
 	}
 	return (0);
 }
-
-
-
-
-
-
-void	child(char *argv[])
-{
-	char	**exec_args = ft_split(argv[3], ' ');
-
-	execve("/bin/bash", exec_args, NULL);
-}
