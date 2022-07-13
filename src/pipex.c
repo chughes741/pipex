@@ -15,9 +15,15 @@
 int	main(int argc, char *argv[], char *envp[])
 {
 	t_data	*data;
+	int		i;
 
 	data = get_data();
 	init_data(argc, argv);
+	i = 0;
+	while (i < data->n_pipe)
+	{
+		if (fork())
+	}
 	return (0);
 }
 

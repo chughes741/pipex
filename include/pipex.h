@@ -24,10 +24,11 @@
 
 // Holds the file descriptors and programs
 typedef struct	s_data {
-	int	fd_in;
-	int	fd_out;
-	int	n_pipe;
-	int	*pipe;
+	int		fd_in;
+	int		fd_out;
+	int		n_pipe;
+	int		*pipe;
+	pid_t	*pid;
 }			t_data;
 
 t_data	*get_data(void);
