@@ -12,11 +12,24 @@
 
 #include "../include/pipex.h"
 
+// Uses access to find the correct path 
+static char	*get_path(char **paths, char *command)
+{
+	char	*path;
+
+	return (path);
+}
+
+// Initializes a child process with execve
 void	init_child(int i)
 {
 	t_data	*data;
-	char	**prog;
+	char	*path;
+	char	**exec_arg;
+	char	**envp;
 
 	data = get_data();
-
+	exec_arg = ft_split(data->argv[i + 2], ' ');
+	path = get_path(data->paths, exec_arg[0]);
+	execve(path, exec_arg, envp);
 }

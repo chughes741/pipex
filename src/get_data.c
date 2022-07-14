@@ -12,6 +12,7 @@
 
 #include "../include/pipex.h"
 
+// Singleton constructor for data struct
 t_data	*get_data(void)
 {
 	static t_data	*data = NULL;
@@ -26,7 +27,24 @@ t_data	*get_data(void)
 	return (data);
 }
 
-void	init_data(int argc, char *argv[])
+// Returns a new string with the PATH from envp
+static char	**find_path(char *envp[])
+{
+	char	*path;
+	char	**paths;
+	int		i;
+
+	i = 0;
+	while (ft_strncmp(envp[i], "PATH=", 5))
+		i++;
+	path = ft_strdup(envp[i][5]);
+	paths = ft_split(path, ':');
+	free(path);
+	return (paths);
+}
+
+// Initializes data struct
+void	init_data(int argc, char *argv[], char *envp[])
 {
 	t_data	*data;
 
@@ -37,5 +55,6 @@ void	init_data(int argc, char *argv[])
 	data->n_pipe = argc - 3;
 	data->pipe = ft_calloc(data->n_pipe * 2, sizeof(int));
 	data->pid = ft_calloc(data->n_pipe, sizeof(pid_t));
+	data->paths = find_path(envp);
 	return ;
 }

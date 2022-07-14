@@ -27,17 +27,18 @@ typedef int *array;
 
 // Holds the file descriptors and programs
 typedef struct	s_data {
-	char	*argv[];
+	char	**argv;
 	int		fd_in;
 	int		fd_out;
 	int		n_pipe;
 	array	pipe;
 	pid_t	*pid;
+	char	**paths;
 }			t_data;
 
 
 t_data	*get_data(void);
-void	init_data(int argc, char *argv[]);
+void	init_data(int argc, char *argv[], char *envp[]);
 void	exit_error(char *message);
 void	del_data(void);
 void	init_child(int i);
