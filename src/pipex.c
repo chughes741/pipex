@@ -28,7 +28,7 @@ int	main(int argc, char *argv[], char *envp[])
 		if (data->pid[i] < 0)
 			exit_error("Fork error ");
 		else if (data->pid[i] == 0)
-			execve(NULL, NULL, NULL); // TODO set up execve call
+			init_child(i);
 	}
 	return (0);
 }
