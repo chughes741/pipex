@@ -31,8 +31,9 @@ void	init_data(int argc, char *argv[])
 	t_data	*data;
 
 	data = get_data();
+	data->argv = argv;
 	data->fd_in = open(argv[1], O_RDONLY);
-	data->fd_out = open(argv[argc - 1], O_WRONLY, O_CREAT, O_TRUNC);
+	data->fd_out = open(argv[argc - 1], O_RDWR | O_CREAT | O_TRUNC, 777);
 	data->n_pipe = argc - 3;
 	data->pipe = ft_calloc(data->n_pipe * 2, sizeof(int));
 	data->pid = ft_calloc(data->n_pipe, sizeof(pid_t));
