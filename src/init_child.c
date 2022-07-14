@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   birth_child.c                                      :+:      :+:    :+:   */
+/*   init_child.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chughes <marvin@42quebec.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,3 +12,11 @@
 
 #include "../include/pipex.h"
 
+void	init_child(int i)
+{
+	t_data	*data;
+	char	**prog;
+
+	data = get_data();
+
+}
