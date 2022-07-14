@@ -22,14 +22,18 @@
 
 # include "../libft/include/libft.h"
 
+// Pointer to an integer array
+typedef int *array;
+
 // Holds the file descriptors and programs
 typedef struct	s_data {
 	int		fd_in;
 	int		fd_out;
 	int		n_pipe;
-	int		*pipe;
+	array	pipe;
 	pid_t	*pid;
 }			t_data;
+
 
 t_data	*get_data(void);
 void	init_data(int argc, char *argv[]);
