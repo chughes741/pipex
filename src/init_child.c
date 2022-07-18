@@ -26,10 +26,11 @@ void	init_child(int i)
 	t_data	*data;
 	char	*path;
 	char	**exec_arg;
-	char	**envp;
 
 	data = get_data();
 	exec_arg = ft_split(data->argv[i + 2], ' ');
+	for (int i = 0; exec_arg[i]; ++i)
+		printf("%s\n", exec_arg[i]);
 	path = get_path(data->paths, exec_arg[0]);
-	execve(path, exec_arg, envp);
+	execve(path, exec_arg, data->envp);
 }
