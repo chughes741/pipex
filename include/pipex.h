@@ -28,6 +28,7 @@ typedef int *array;
 // Holds the file descriptors and programs
 typedef struct	s_data {
 	char	**argv;
+	char	**envp;
 	int		fd_in;
 	int		fd_out;
 	int		n_pipe;

@@ -50,6 +50,7 @@ void	init_data(int argc, char *argv[], char *envp[])
 
 	data = get_data();
 	data->argv = argv;
+	data->envp = envp;
 	data->fd_in = open(argv[1], O_RDONLY);
 	data->fd_out = open(argv[argc - 1], O_RDWR | O_CREAT | O_TRUNC, 777);
 	data->n_pipe = argc - 3;
