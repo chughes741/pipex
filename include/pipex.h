@@ -44,5 +44,6 @@ void	init_data(int argc, char *argv[], char *envp[]);
 void	exit_error(char *message);
 void	del_data(void);
 void	init_child(int i);
+char	*ft_str_prepend(char *s1, char *s2);
 
 #endif
