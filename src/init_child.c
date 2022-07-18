@@ -17,6 +17,12 @@ static char	*get_path(char **paths, char *command)
 {
 	char	*path;
 
+	if (command == NULL) //! Testing testing
+		return (NULL);
+	if (paths[0][0] == -1) //! Just here to compile
+		printf("Cock and balls bitch");
+	path = NULL;
+
 	return (path);
 }
 
