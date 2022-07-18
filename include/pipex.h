@@ -38,6 +38,7 @@ typedef struct	s_data {
 
 
 t_data	*get_data(void);
+void	check_input(int argc, char *argv[]);
 void	init_data(int argc, char *argv[], char *envp[]);
 void	exit_error(char *message);
 void	del_data(void);

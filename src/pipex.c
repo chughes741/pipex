@@ -21,8 +21,7 @@ int	main(int argc, char *argv[], char *envp[])
 		printf("%s\n", envp[i]);
 	exit(0);
 
-	if (argc < 5)
-		exit_error("Error: too few arguments ");
+	check_input(argc, argv);
 
 	data = get_data();
 	init_data(argc, argv, envp);
