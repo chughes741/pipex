@@ -30,6 +30,7 @@ int	main(int argc, char *argv[], char *envp[])
 			exit_error("Fork error ");
 		else if (data->pid[i] == 0)
 			init_child(i);
+		waitpid(data->pid[i], NULL, 0);
 	}
 	return (0);
 }
