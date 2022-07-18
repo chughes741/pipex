@@ -23,7 +23,7 @@ int	main(int argc, char *argv[], char *envp[])
 	i = -1;
 	while (++i < data->n_pipe + 1)
 	{
-		if (pipe(data->pipe[i * 2]) != 0)
+		if (pipe(&data->pipe[i * 2]) != 0)
 			exit_error("Pipe error ");
 		data->pid[i] = fork();
 		if (data->pid[i] < 0)
