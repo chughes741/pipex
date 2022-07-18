@@ -37,7 +37,7 @@ static char	**find_path(char *envp[])
 	i = 0;
 	while (ft_strncmp(envp[i], "PATH=", 5))
 		i++;
-	path = ft_strdup(envp[i][5]);
+	path = ft_strdup(&envp[i][5]);
 	paths = ft_split(path, ':');
 	free(path);
 	return (paths);
