@@ -17,15 +17,9 @@ int	main(int argc, char *argv[], char *envp[])
 	t_data	*data;
 	int		i;
 
-	for (int i = 0; envp[i]; ++i)
-		printf("%s\n", envp[i]);
-	exit(0);
-
 	check_input(argc, argv);
-
 	data = get_data();
 	init_data(argc, argv, envp);
-
 	i = -1;
 	while (++i < data->n_pipe)
 	{
