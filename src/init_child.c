@@ -38,9 +38,15 @@ void	init_child(int i)
 	char	**exec_arg;
 
 	data = get_data();
+	if (i == 0)
+		dup2(data->fd_in, 0);
+	else
+		dup2(data->pipe[(i * 2) - 2], 0);
+	if (i == data->n_pipe)
+		dup2(data->fd_out, 1);
+	else
+		dup2(data->pipe[(i * 2) + 1], 1);
 	exec_arg = ft_split(data->argv[i + 2], ' ');
 	path = get_path(data->paths, exec_arg[0]);
-	printf("Path is: %s\n", path); //! DEBUG
-	printf("Args are: %s\n", exec_arg[0]); //! DEBUG
 	execve(path, exec_arg, data->envp);
 }
