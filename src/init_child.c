@@ -16,14 +16,18 @@
 static char	*get_path(char **paths, char *command)
 {
 	char	*path;
+	int		i;
 
-	if (command == NULL) //! Testing testing
-		return (NULL);
-	if (paths[0][0] == -1) //! Just here to compile
-		printf("Cock and balls bitch");
-	path = NULL;
-
-	return (path);
+	i = -1;
+	while(paths[++i])
+	{
+		path = ft_strjoin(paths[i], "/");
+		path = ft_str_prepend(path, command);
+		if (access(path, F_OK) == 0)
+			return(path);
+		free(path);
+	}
+	return (NULL);
 }
 
 // Initializes a child process with execve
@@ -35,8 +39,8 @@ void	init_child(int i)
 
 	data = get_data();
 	exec_arg = ft_split(data->argv[i + 2], ' ');
-	for (int i = 0; exec_arg[i]; ++i)
-		printf("%s\n", exec_arg[i]);
 	path = get_path(data->paths, exec_arg[0]);
+	printf("Path is: %s\n", path); //! DEBUG
+	printf("Args are: %s\n", exec_arg[0]); //! DEBUG
 	execve(path, exec_arg, data->envp);
 }
