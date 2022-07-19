@@ -22,6 +22,10 @@
 
 # include "../libft/include/libft.h"
 
+// Macro definitions for easier reading
+# define STDIN_FD 0
+# define STDOUT_FD 1
+
 // Pointer to an integer array
 typedef int *array;
 
