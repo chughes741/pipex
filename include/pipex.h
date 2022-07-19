@@ -31,8 +31,7 @@ typedef struct	s_data {
 	char	**envp;
 	int		fd_in;
 	int		fd_out;
-	int		n_pipe;
-	array	pipe;
+	int		pipe[2];
 	pid_t	*pid;
 	char	**paths;
 }			t_data;

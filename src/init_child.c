@@ -38,18 +38,16 @@ static void	lay_pipe(int cid)
 	data = get_data();
 	if (cid == 0)
 	{
-		dup2(data->fd_in, 0);
+		dup2(data->fd_in, STDIN_FILENO);
 		close(data->pipe[0]);
+		dup2(data->pipe[1], STDOUT_FILENO);
 	}
 	else
-		dup2(data->pipe[(cid * 2) - 2], 0);
-	if (cid == data->n_pipe)
 	{
-		dup2(data->fd_out, 1);
-		close(data->pipe[(cid * 2) - 1]);
+		dup2(data->fd_out, STDOUT_FILENO);
+		close(data->pipe[1]);
+		dup2(data->pipe[0], STDIN_FILENO);
 	}
-	else
-		dup2(data->pipe[(cid * 2) + 1], 1);
 	return ;
 }
 
@@ -62,7 +60,7 @@ void	init_child(int cid)
 
 	data = get_data();
 	lay_pipe(cid);
-	exec_arg = ft_split(data->argv[i + 2], ' ');
+	exec_arg = ft_split(data->argv[cid + 2], ' ');
 	path = get_path(data->paths, exec_arg[0]);
 	execve(path, exec_arg, data->envp);
 }

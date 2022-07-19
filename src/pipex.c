@@ -21,9 +21,9 @@ int	main(int argc, char *argv[], char *envp[])
 	data = get_data();
 	init_data(argc, argv, envp);
 	i = -1;
-	while (++i < data->n_pipe + 1)
+	while (++i < 2)
 	{
-		if (pipe(&data->pipe[i * 2]) != 0)
+		if (pipe(data->pipe) != 0)
 			exit_error("Pipe error ");
 		data->pid[i] = fork();
 		if (data->pid[i] < 0)
