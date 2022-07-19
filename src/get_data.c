@@ -18,11 +18,7 @@ t_data	*get_data(void)
 	static t_data	*data = NULL;
 
 	if (data == NULL)
-	{
 		data = ft_calloc(1, sizeof(t_data));
-		data->fd_in = -1;
-		data->fd_out = -1;
-	}
 	return (data);
 }
 
@@ -51,8 +47,7 @@ void	init_data(int argc, char *argv[], char *envp[])
 	data->argv = argv;
 	data->envp = envp;
 	data->fd_in = open(argv[1], O_RDONLY);
-	data->fd_out = open(argv[argc - 1], O_RDWR | O_CREAT | O_TRUNC, 777);
-	data->pid = ft_calloc(2, sizeof(pid_t));
+	data->fd_out = open(argv[argc - 1], O_RDWR | O_CREAT | O_TRUNC, 644);
 	data->paths = find_path(envp);
 	return ;
 }

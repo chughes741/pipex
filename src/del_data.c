@@ -17,10 +17,6 @@ void	del_data(void)
 	t_data	*data;
 
 	data = get_data();
-	if (data->pipe)
-		free(data->pipe);
-	if (data->pid)
-		free(data->pid);
 	if (data)
 		free(data);
 	return ;

@@ -32,7 +32,7 @@ typedef struct	s_data {
 	int		fd_in;
 	int		fd_out;
 	int		pipe[2];
-	pid_t	*pid;
+	pid_t	pid[2];
 	char	**paths;
 }			t_data;
 

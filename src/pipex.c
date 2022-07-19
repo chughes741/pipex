@@ -21,16 +21,20 @@ int	main(int argc, char *argv[], char *envp[])
 	data = get_data();
 	init_data(argc, argv, envp);
 	i = -1;
+	if (pipe(&data->pipe[0]) != 0)
+		exit_error("Pipe error ");
 	while (++i < 2)
 	{
-		if (pipe(data->pipe) != 0)
-			exit_error("Pipe error ");
 		data->pid[i] = fork();
 		if (data->pid[i] < 0)
 			exit_error("Fork error ");
 		else if (data->pid[i] == 0)
 			init_child(i);
-		waitpid(data->pid[i], NULL, 0);
 	}
+	close(data->pipe[0]);
+	close(data->pipe[1]);
+	waitpid(data->pid[0], NULL, 0);
+	waitpid(data->pid[1], NULL, 0);
+	del_data();
 	return (0);
 }
