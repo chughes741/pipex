@@ -43,7 +43,7 @@ void	check_input(int argc, char *argv[]);
 void	init_data(int argc, char *argv[], char *envp[]);
 void	exit_error(char *message);
 void	del_data(void);
-void	init_child(int i);
+void	init_child(int cid);
 char	*ft_str_prepend(char *s1, char *s2);
 
 #endif
