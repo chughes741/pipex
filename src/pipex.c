@@ -19,7 +19,7 @@ int	main(int argc, char *argv[], char *envp[])
 
 	check_input(argc, argv);
 	data = get_data();
-	init_data(argc, argv, envp);
+	init_data(argv, envp);
 	i = -1;
 	if (pipe(&data->pipe[0]) != 0)
 		exit_error("Pipe error ");
