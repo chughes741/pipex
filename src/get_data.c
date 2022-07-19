@@ -49,7 +49,7 @@ void	init_data(char *argv[], char *envp[])
 	data->fd_in = open(argv[1], O_RDONLY);
 	if (data->fd_in < 0)
 		exit_error("Error with input file ");
-	data->fd_out = open(argv[4], O_RDWR | O_CREAT | O_TRUNC, 777);
+	data->fd_out = open(argv[4], O_RDWR | O_CREAT | O_TRUNC, 0644);
 	if (data->fd_out < 0)
 		exit_error("Error with output file ");
 	data->paths = find_path(envp);
