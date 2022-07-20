@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   del_data.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chughes <marvin@42quebec.com>              +#+  +:+       +#+        */
+/*   By: chughes <chughes@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 14:58:12 by chughes           #+#    #+#             */
 /*   Updated: 2022/07/13 14:58:14 by chughes          ###   ########.fr       */
