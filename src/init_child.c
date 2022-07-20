@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   init_child.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chughes <marvin@42quebec.com>              +#+  +:+       +#+        */
+/*   By: chughes <chughes@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 16:00:23 by chughes           #+#    #+#             */
 /*   Updated: 2022/07/08 16:00:24 by chughes          ###   ########.fr       */
