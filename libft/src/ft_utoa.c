@@ -12,6 +12,7 @@
 
 #include "../include/libft.h"
 
+// Converts an unsigned int to a string
 char	*ft_utoa(unsigned int nbr)
 {
 	int		i;

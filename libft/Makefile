@@ -1,6 +1,6 @@
 
 # Hides calls
-VERBOSE	=	FALSE
+VERBOSE	=	TRUE
 ifeq ($(VERBOSE),TRUE)
 	HIDE =
 else

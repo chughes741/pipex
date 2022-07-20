@@ -12,6 +12,7 @@
 
 #include "../include/libft.h"
 
+// Sets 'n' bytes of memory to 0x0 at 's' address
 void	ft_bzero(void *s, size_t n)
 {
 	size_t	count;

@@ -12,6 +12,7 @@
 
 #include "../include/libft.h"
 
+// Converts a pointer to a hexidecimal str
 char	*ft_ptoa(uintptr_t nbr)
 {
 	int		i;

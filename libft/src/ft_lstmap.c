@@ -12,6 +12,7 @@
 
 #include "../include/libft.h"
 
+// Creates a new list with 'f' applied to it, uses 'del' to remove 'lst'
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*head;

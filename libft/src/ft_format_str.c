@@ -12,6 +12,7 @@
 
 #include "../include/libft.h"
 
+// Adds 'precision' extra char to end of str
 static char	*ft_max_width(char *str, int precision)
 {
 	char	*rtn;
@@ -26,6 +27,7 @@ static char	*ft_max_width(char *str, int precision)
 	return (rtn);
 }
 
+// Formats 'str' based on precision, width, and '-'
 char	*ft_format_str(char *str, t_mod *mod)
 {
 	if (mod->precision >= 0 && ft_strlen(str) > (unsigned long)mod->precision)

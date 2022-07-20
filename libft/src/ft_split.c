@@ -12,6 +12,7 @@
 
 #include "../include/libft.h"
 
+// Counts number of words in 's' based on 'c' seperator
 static size_t	ft_wordcount(char const *s, char c)
 {
 	int				i;
@@ -32,6 +33,7 @@ static size_t	ft_wordcount(char const *s, char c)
 	return (wordcount);
 }
 
+// Allocates return set of strings
 static char	**makestrarray(unsigned int count)
 {
 	char	**rtn;
@@ -43,6 +45,7 @@ static char	**makestrarray(unsigned int count)
 	return (rtn);
 }
 
+// Splits 's' into multiple strings, 'c' is seperator
 char	**ft_split(char const *s, char c)
 {
 	char			**rtn;

@@ -12,6 +12,7 @@
 
 #include "../include/libft.h"
 
+// Iterates over 'lst', applys 'f' to each node
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	t_list	*node;

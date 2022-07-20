@@ -12,6 +12,7 @@
 
 #include "../include/libft.h"
 
+// Turns all char in 'str' to their ASCII uppercase
 void	ft_strupper(char *str)
 {
 	int	i;

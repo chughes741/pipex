@@ -12,11 +12,13 @@
 
 #include "../include/libft.h"
 
+// Writes a char to stdout
 static int	ft_putchar(int c)
 {
 	return (write(1, &c, 1));
 }
 
+// Calls itoa/utoa/itox/ptoa on args passed in, returns the str
 static char	*ft_get_num(t_mod *mod, va_list args, char *output)
 {
 	free(output);
@@ -31,6 +33,7 @@ static char	*ft_get_num(t_mod *mod, va_list args, char *output)
 	return (output);
 }
 
+// Prints %c with modifiers
 static void	ft_print_chr(int chr, t_mod *mod, int *count, char *output)
 {
 	free(output);
@@ -55,6 +58,7 @@ static void	ft_print_chr(int chr, t_mod *mod, int *count, char *output)
 	}
 }
 
+// Prints the next arg with formatting applied
 void	ft_print_arg(t_mod *mod, va_list args, int *count)
 {
 	char	*output;

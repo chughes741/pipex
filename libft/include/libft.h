@@ -89,7 +89,7 @@ char		*ft_utoa(unsigned int nbr);
 char		*ft_ptoa(uintptr_t nbr);
 char		*ft_str_append(char *s1, char *s2);
 char		*ft_format(t_mod *mod, char *str);
-char		*ft_chr_append(int c, char *str);
+char		*ft_chr_prepend(int c, char *str);
 void		ft_left_justify(char *str);
 void		ft_strupper(char *str);
 void		ft_space_to_zero(char *str);

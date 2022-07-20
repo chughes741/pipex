@@ -12,6 +12,7 @@
 
 #include "../include/libft.h"
 
+// Recursively deletes 'lst'
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	t_list	*node;

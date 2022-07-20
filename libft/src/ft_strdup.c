@@ -12,6 +12,7 @@
 
 #include "../include/libft.h"
 
+// Allocates and duplicates 'src'
 char	*ft_strdup(const char *src)
 {
 	char	*outstr;

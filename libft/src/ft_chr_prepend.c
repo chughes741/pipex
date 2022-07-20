@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_chr_append.c                                    :+:      :+:    :+:   */
+/*   ft_chr_prepend.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,8 @@
 
 #include "../include/libft.h"
 
-char	*ft_chr_append(int c, char *str)
+// Prepends 'c' to 'str' and frees 'str'
+char	*ft_chr_prepend(int c, char *str)
 {
 	char	*rtn;
 

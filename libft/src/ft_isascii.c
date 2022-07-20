@@ -12,6 +12,7 @@
 
 #include "../include/libft.h"
 
+// Bool return if 'c' is valid ASCII
 int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)

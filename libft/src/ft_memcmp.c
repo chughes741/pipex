@@ -12,6 +12,7 @@
 
 #include "../include/libft.h"
 
+// Returns 0 if identical, or diff of first different
 int	ft_memcmp(const void *str1, const void *str2, size_t n)
 {
 	unsigned char	*ptr1;

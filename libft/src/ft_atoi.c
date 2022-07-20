@@ -12,6 +12,7 @@
 
 #include "../include/libft.h"
 
+// Returns 10^pow
 static int	ft_pow10(int pow)
 {
 	int	result;
@@ -25,6 +26,7 @@ static int	ft_pow10(int pow)
 	return (result);
 }
 
+// Checks if n is an ASCII whitespace char
 static int	is_space(char n)
 {
 	if (n == ' ' || n == '\n' || n == '\t' || n == '\v' || n == '\f' \
@@ -34,6 +36,7 @@ static int	is_space(char n)
 		return (0);
 }
 
+// Returns str turned into an int
 int	ft_atoi(const char *str)
 {
 	int	output;

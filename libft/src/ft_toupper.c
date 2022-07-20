@@ -12,6 +12,7 @@
 
 #include "../include/libft.h"
 
+// Turns 'c' into its ASCII uppercase
 int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')

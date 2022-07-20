@@ -12,6 +12,7 @@
 
 #include "../include/libft.h"
 
+// Returns pointer to last node in list
 t_list	*ft_lstlast(t_list *lst)
 {
 	t_list	*rtn;

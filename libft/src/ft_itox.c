@@ -12,6 +12,7 @@
 
 #include "../include/libft.h"
 
+// Converts 'nbr' into str in hexidecimal format 
 char	*ft_itox(int nbr)
 {
 	int		i;

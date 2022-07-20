@@ -12,6 +12,7 @@
 
 #include "../include/libft.h"
 
+// Compares 'n' number of char in strings, returns 0 if same or diff
 int	ft_strncmp(const char *str1, const char *str2, size_t n)
 {
 	int	i;

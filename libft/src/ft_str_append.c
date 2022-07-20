@@ -12,6 +12,7 @@
 
 #include "../include/libft.h"
 
+// Appends 's2' to 's1' and frees 's2'
 char	*ft_str_append(char *s1, char *s2)
 {
 	char	*rtn;

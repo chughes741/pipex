@@ -12,6 +12,7 @@
 
 #include "../include/libft.h"
 
+// Returns a pointer to first instance of 'c' in str, or NULL if none
 void	*ft_memchr(const void *str, int c, size_t n)
 {
 	char	*sptr;

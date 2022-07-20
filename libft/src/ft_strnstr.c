@@ -12,6 +12,7 @@
 
 #include "../include/libft.h"
 
+// Returns pointer to first occurence of 'needle' in 'haystack' or NULL
 char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 {
 	unsigned long	i;

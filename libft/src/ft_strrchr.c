@@ -12,6 +12,7 @@
 
 #include "../include/libft.h"
 
+// Finds first instance of 'c' in 'str' starting from end, or NULL
 char	*ft_strrchr(const char *str, int c)
 {
 	size_t	i;

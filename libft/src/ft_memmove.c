@@ -12,6 +12,7 @@
 
 #include "../include/libft.h"
 
+// Copies 'src' to 'dst', handles overlap
 void	*ft_memmove(void *dst, const void *src, size_t n)
 {
 	size_t	i;

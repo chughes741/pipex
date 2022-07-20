@@ -12,6 +12,7 @@
 
 #include "../include/libft.h"
 
+// Turns 'c' into its ASCII lowercase
 int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')

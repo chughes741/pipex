@@ -12,6 +12,7 @@
 
 #include "../include/libft.h"
 
+// Copies 'src' to 'dst', position independant
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t	i;

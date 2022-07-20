@@ -12,6 +12,7 @@
 
 #include "../include/libft.h"
 
+// Bool return if 'c' is ASCII digit
 int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')

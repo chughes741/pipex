@@ -12,6 +12,7 @@
 
 #include "../include/libft.h"
 
+// Bool return if 'c' is in ASCII alphabet
 int	ft_isalpha(int c)
 {
 	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))

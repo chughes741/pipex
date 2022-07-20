@@ -12,6 +12,7 @@
 
 #include "../include/libft.h"
 
+// Bool return if 'c' is printable ASCII
 int	ft_isprint(int c)
 {
 	if (c > 31 && c < 127)

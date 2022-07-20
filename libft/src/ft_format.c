@@ -12,6 +12,7 @@
 
 #include "../include/libft.h"
 
+// Removed '-' from 'str'
 char	*ft_neg_pop(char *str, _Bool *neg)
 {
 	char	*rtn;
@@ -26,6 +27,7 @@ char	*ft_neg_pop(char *str, _Bool *neg)
 	return (rtn);
 }
 
+// Added spaces to 'str' if len is < 'width'
 char	*ft_min_width(char *str, int width, int zero)
 {
 	_Bool	neg;
@@ -45,6 +47,7 @@ char	*ft_min_width(char *str, int width, int zero)
 	return (str);
 }
 
+// Sets len and adds zeros
 static char	*ft_precision(char *str, t_mod *mod)
 {
 	_Bool	neg;
@@ -65,6 +68,7 @@ static char	*ft_precision(char *str, t_mod *mod)
 	return (str);
 }
 
+// Formats 'str' based on modifiers set
 char	*ft_format(t_mod *mod, char *str)
 {
 	if (mod->specifier == 's')

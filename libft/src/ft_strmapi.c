@@ -12,6 +12,7 @@
 
 #include "../include/libft.h"
 
+// Returns copy of 's' with 'f' applied to it
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	unsigned int	i;

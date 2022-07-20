@@ -12,6 +12,7 @@
 
 #include "../include/libft.h"
 
+// Allocates a new list and returns a pointer to it
 t_list	*ft_lstnew(void *content)
 {
 	t_list	*new_list;

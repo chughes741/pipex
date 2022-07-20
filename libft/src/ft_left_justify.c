@@ -12,6 +12,7 @@
 
 #include "../include/libft.h"
 
+// Left justifies 'str' based on ' '
 void	ft_left_justify(char *str)
 {
 	int	i;

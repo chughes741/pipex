@@ -12,6 +12,7 @@
 
 #include "../include/libft.h"
 
+// Gets flags from a str
 static char	*ft_get_flags(t_mod *mods, char *format)
 {
 	while (ft_strchr("-+ #0", *format))
@@ -31,6 +32,7 @@ static char	*ft_get_flags(t_mod *mods, char *format)
 	return (format);
 }
 
+// Gets width/precision from str
 static char	*ft_get_num(char *format, int *num)
 {
 	int	count;
@@ -51,6 +53,7 @@ static char	*ft_get_num(char *format, int *num)
 	return (&format[count]);
 }
 
+// Gets modifiers from an input str
 t_mod	*ft_get_mods(char *format)
 {
 	t_mod	*mods;

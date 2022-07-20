@@ -12,6 +12,7 @@
 
 #include "../include/libft.h"
 
+// Removes contents of 'lst' with 'del' and frees 'lst'
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	(del)(lst->content);

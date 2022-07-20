@@ -12,6 +12,7 @@
 
 #include "../include/libft.h"
 
+// Concatenates 'size' bytes of 'dst' onto 'src'
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;

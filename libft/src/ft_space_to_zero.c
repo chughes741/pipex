@@ -12,6 +12,7 @@
 
 #include "../include/libft.h"
 
+// Swaps all ' ' at the start of 'str' to '0'
 void	ft_space_to_zero(char *str)
 {
 	int	i;

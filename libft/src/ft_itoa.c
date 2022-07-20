@@ -12,6 +12,7 @@
 
 #include "../include/libft.h"
 
+// Returns number of digits in 'n'
 static int	ft_isize(int n)
 {
 	if (n < 0)
@@ -37,6 +38,7 @@ static int	ft_isize(int n)
 	return (10);
 }
 
+// Transforms 'n' into a string
 char	*ft_itoa(int n)
 {
 	char	*rtn;

@@ -12,6 +12,7 @@
 
 #include "../include/libft.h"
 
+// Writes 'n' to 'fd'
 void	ft_putnbr_fd(int n, int fd)
 {
 	char	nbr;

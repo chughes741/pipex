@@ -12,6 +12,7 @@
 
 #include "../include/libft.h"
 
+// Joins 's1' and 's2' into rtn string, does not free
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*rtn;

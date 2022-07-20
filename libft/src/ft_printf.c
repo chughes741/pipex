@@ -12,6 +12,7 @@
 
 #include "../include/libft.h"
 
+// Functions as stdlib printf
 int	ft_printf(const char *form, ...)
 {
 	va_list		args;

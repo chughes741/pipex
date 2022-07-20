@@ -12,6 +12,7 @@
 
 #include "../include/libft.h"
 
+// Calls malloc and bzero on the allocated memory
 void	*ft_calloc(size_t nitems, size_t size)
 {
 	void	*outptr;

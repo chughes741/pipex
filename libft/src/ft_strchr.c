@@ -12,6 +12,7 @@
 
 #include "../include/libft.h"
 
+// Returns pointer to first instance of 'c' in 'str', or NULL
 char	*ft_strchr(const char *str, int c)
 {
 	int	i;

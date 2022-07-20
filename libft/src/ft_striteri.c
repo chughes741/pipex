@@ -12,6 +12,7 @@
 
 #include "../include/libft.h"
 
+// Applies 'f' to each char in 's'
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	unsigned int	i;
