@@ -61,9 +61,13 @@ $(DEBUG): $(OBJS)
 
 db: $(DEBUG)
 	$(HIDE)clear
+	$(HIDE)touch in.txt
+	$(HIDE)echo "asdasda\n   \n\the\n\n\n4232 \n" > in.txt
 	$(HIDE)./$< $(DARGS)
-	$(HIDE)cat out.txt
-	$(HIDE)$(RM) out.txt
+	$(HIDE)< in.txt cat | wc -w > out2.txt
+	$(HIDE)echo "Number of different lines:"
+	$(HIDE)diff out.txt out2.txt | wc -l
+	$(HIDE)$(RM) in.txt out.txt out2.txt
 
 # Generates test files for valgrind and gprof
 $(TEST): $(OBJS)
