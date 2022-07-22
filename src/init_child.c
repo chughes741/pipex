@@ -27,6 +27,7 @@ static char	*get_path(char **paths, char *command)
 			return(path);
 		free(path);
 	}
+	exit_error("Error couldn't find program: ");
 	return (NULL);
 }
 

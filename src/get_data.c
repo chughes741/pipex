@@ -47,7 +47,7 @@ void	init_data(char *argv[], char *envp[])
 	data->argv = argv;
 	data->envp = envp;
 	data->fd_in = open(argv[1], O_RDONLY);
-	if (data->fd_in < 0)
+	if (data->fd_in < 0 || access(argv[1], R_OK) < 0)
 		exit_error("Error with input file ");
 	data->fd_out = open(argv[4], O_RDWR | O_CREAT | O_TRUNC, 0644);
 	if (data->fd_out < 0)
