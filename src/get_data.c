@@ -39,11 +39,13 @@ static char	**find_path(char *envp[])
 }
 
 // Initializes data struct
-void	init_data(char *argv[], char *envp[])
+void	init_data(int argc, char *argv[], char *envp[])
 {
 	t_data	*data;
 
 	data = get_data();
+	if (argc != 5)
+		exit_error("Error: Too few arguments ");
 	data->argv = argv;
 	data->envp = envp;
 	data->fd_in = open(argv[1], O_RDONLY);

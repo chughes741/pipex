@@ -17,9 +17,8 @@ int	main(int argc, char *argv[], char *envp[])
 	t_data	*data;
 	int		i;
 
-	check_input(argc, argv);
 	data = get_data();
-	init_data(argv, envp);
+	init_data(argc, argv, envp);
 	i = -1;
 	if (pipe(&data->pipe[0]) != 0)
 		exit_error("Pipe error ");
