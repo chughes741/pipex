@@ -47,8 +47,8 @@ static void	lay_pipe(int cid)
 		dup2(data->fd_out, STDOUT_FILENO);
 		dup2(data->pipe[0], STDIN_FILENO);
 	}
-		close(data->pipe[0]);
-		close(data->pipe[1]);
+	close(data->pipe[0]);
+	close(data->pipe[1]);
 	return ;
 }
 
