@@ -30,27 +30,6 @@ static char	*get_path(char **paths, char *command)
 	return (NULL);
 }
 
-// Sets up pipes for children
-static void	lay_pipe(int cid)
-{
-	t_data	*data;
-
-	data = get_data();
-	if (cid == 0)
-	{
-		dup2(data->fd_in, STDIN_FILENO);
-		dup2(data->pipe[1], STDOUT_FILENO);
-	}
-	else
-	{
-		dup2(data->fd_out, STDOUT_FILENO);
-		dup2(data->pipe[0], STDIN_FILENO);
-	}
-	close(data->pipe[0]);
-	close(data->pipe[1]);
-	return ;
-}
-
 // Initializes a child process with execve
 void	init_child(int cid)
 {
@@ -59,7 +38,18 @@ void	init_child(int cid)
 	char	**exec_arg;
 
 	data = get_data();
-	lay_pipe(cid);
+	if (cid == 0)
+	{
+		dup2(data->fd_in, STDIN_FILENO);
+		dup2(data->pipe[1], STDOUT_FILENO);
+		close(data->pipe[1]);
+	}
+	else
+	{
+		dup2(data->fd_out, STDOUT_FILENO);
+		dup2(data->pipe[0], STDIN_FILENO);
+	}
+	close(data->pipe[0]);
 	exec_arg = ft_split(data->argv[cid + 2], ' ');
 	path = get_path(data->paths, exec_arg[0]);
 	if (path)
