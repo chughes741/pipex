@@ -15,25 +15,29 @@
 int	main(int argc, char *argv[], char *envp[])
 {
 	t_data	*data;
-	int		i;
 
 	data = get_data();
 	init_data(argc, argv, envp);
-	i = -1;
+
 	if (pipe(&data->pipe[0]) != 0)
 		exit_error("Pipe error ");
-	while (++i < 2)
-	{
-		data->pid[i] = fork();
-		if (data->pid[i] < 0)
-			exit_error("Fork error ");
-		else if (data->pid[i] == 0)
-			init_child(i);
-	}
-	close(data->pipe[0]);
+
+	data->pid[0] = fork();
+	if (data->pid[0] < 0)
+		exit_error("Error creating first child");
+	else if (data->pid[0] == 0)
+		init_child(0);
 	close(data->pipe[1]);
 	waitpid(data->pid[0], NULL, 0);
+	
+	data->pid[1] = fork();
+	if (data->pid[1] < 0)
+		exit_error("Error creating second child");
+	else if (data->pid[1] == 0)
+		init_child(1);
+	close(data->pipe[0]);
 	waitpid(data->pid[1], NULL, 0);
+
 	del_data();
 	return (0);
 }
