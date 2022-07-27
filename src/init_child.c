@@ -40,15 +40,15 @@ static void	lay_pipe(int cid)
 	if (cid == 0)
 	{
 		dup2(data->fd_in, STDIN_FILENO);
-		close(data->pipe[0]);
 		dup2(data->pipe[1], STDOUT_FILENO);
 	}
 	else
 	{
 		dup2(data->fd_out, STDOUT_FILENO);
-		close(data->pipe[1]);
 		dup2(data->pipe[0], STDIN_FILENO);
 	}
+		close(data->pipe[0]);
+		close(data->pipe[1]);
 	return ;
 }
 
