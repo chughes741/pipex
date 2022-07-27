@@ -27,7 +27,6 @@ static char	*get_path(char **paths, char *command)
 			return(path);
 		free(path);
 	}
-	exit_error("Error couldn't find program: ");
 	return (NULL);
 }
 
@@ -63,5 +62,7 @@ void	init_child(int cid)
 	lay_pipe(cid);
 	exec_arg = ft_split(data->argv[cid + 2], ' ');
 	path = get_path(data->paths, exec_arg[0]);
-	execve(path, exec_arg, data->envp);
+	if (path)
+		execve(path, exec_arg, data->envp);
+	exit_error("Error with child");
 }
