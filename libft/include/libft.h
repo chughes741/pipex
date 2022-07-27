@@ -15,8 +15,9 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include <stdarg.h> // Not sure if included in stdlib.h
-# include <string.h> // Not sure if needed
+# include <stdarg.h> //! Not sure if included in stdlib.h
+# include <string.h> //! Not sure if needed
+# include <stdint.h> //! Here for compiling on Linux
 
 typedef struct s_list
 {

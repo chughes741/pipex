@@ -58,7 +58,7 @@ char	**ft_split(char const *s, char c)
 	if (rtn == NULL || wordcount == 0)
 		return (rtn);
 	start = (unsigned int)ft_strlen(s) - 1;
-	while (s[start] && start >= 0 && wordcount >= 0)
+	while (s[start] && start > 0 && wordcount > 0)
 	{
 		while (s[start] && start > 0 && s[start] == c)
 			start--;

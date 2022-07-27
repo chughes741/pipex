@@ -33,6 +33,7 @@ $(NAME): $(OBJS) $(LDIR)/$(LIBFT)
 	$(HIDE)$(CC) $(CFLAGS) -o $@ $(OBJS) $(LDIR)$(LIBFT)
 
 $(OBJS): $(OBJDIR)%.o : $(SRCDIR)%.c
+	$(HIDE)mkdir -p $(OBJDIR)
 	$(HIDE)$(CC) $(CFLAGS) -c $< -o $@
 
 $(LDIR)/$(LIBFT):

@@ -27,6 +27,7 @@ $(NAME): $(OBJS)
 	$(HIDE)ar $(AFLAGS) $@ $(OBJS)
 
 $(OBJS): $(OBJDIR)%.o : $(SRCDIR)%.c
+	$(HIDE)mkdir -p $(OBJDIR)
 	$(HIDE)$(CC) $(CFLAGS) -c $< -o $@
 
 # Removes objects

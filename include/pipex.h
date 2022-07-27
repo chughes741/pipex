@@ -19,6 +19,7 @@
 # include <stdio.h>
 # include <string.h> 
 # include <sys/wait.h>
+# include <stdint.h> //! For compiling on Linux
 
 # include "../libft/include/libft.h"
 
