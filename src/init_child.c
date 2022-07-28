@@ -42,7 +42,6 @@ void	init_child(int cid)
 	{
 		dup2(data->fd_in, STDIN_FILENO);
 		dup2(data->pipe[1], STDOUT_FILENO);
-		close(data->pipe[1]);
 	}
 	else
 	{
@@ -50,6 +49,7 @@ void	init_child(int cid)
 		dup2(data->pipe[0], STDIN_FILENO);
 	}
 	close(data->pipe[0]);
+	close(data->pipe[1]);
 	exec_arg = ft_split(data->argv[cid + 2], ' ');
 	path = get_path(data->paths, exec_arg[0]);
 	if (path)
