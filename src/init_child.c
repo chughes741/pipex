@@ -30,29 +30,36 @@ static char	*get_path(char **paths, char *command)
 	return (NULL);
 }
 
-// Initializes a child process with execve
-void	init_child(int cid)
+// Initializes first child
+void	first_child(void)
 {
 	t_data	*data;
 	char	*path;
 	char	**exec_arg;
 
 	data = get_data();
-	if (cid == 0)
-	{
-		dup2(data->fd_in, STDIN_FILENO);
-		dup2(data->pipe[1], STDOUT_FILENO);
-	}
-	else
-	{
-		dup2(data->fd_out, STDOUT_FILENO);
-		dup2(data->pipe[0], STDIN_FILENO);
-	}
+	dup2(data->fd_in, STDIN_FILENO);
+	dup2(data->pipe[1], STDOUT_FILENO);
 	close(data->pipe[0]);
 	close(data->pipe[1]);
-	exec_arg = ft_split(data->argv[cid + 2], ' ');
+	exec_arg = ft_split(data->argv[2], ' ');
 	path = get_path(data->paths, exec_arg[0]);
-	if (path)
-		execve(path, exec_arg, data->envp);
-	exit_error("Error with child");
+	execve(path, exec_arg, data->envp);
+}
+
+// Initializes second child
+void	second_child(void)
+{
+	t_data	*data;
+	char	*path;
+	char	**exec_arg;
+
+	data = get_data();
+	dup2(data->fd_out, STDOUT_FILENO);
+	dup2(data->pipe[0], STDIN_FILENO);
+	close(data->pipe[0]);
+	close(data->pipe[1]);
+	exec_arg = ft_split(data->argv[3], ' ');
+	path = get_path(data->paths, exec_arg[0]);
+	execve(path, exec_arg, data->envp);
 }
