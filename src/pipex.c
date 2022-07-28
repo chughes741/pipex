@@ -18,10 +18,8 @@ int	main(int argc, char *argv[], char *envp[])
 
 	data = get_data();
 	init_data(argc, argv, envp);
-
 	if (pipe(&data->pipe[0]) != 0)
 		exit_error("Pipe error ");
-
 	data->pid[0] = fork();
 	if (data->pid[0] < 0)
 		exit_error("Error creating first child");
@@ -29,7 +27,6 @@ int	main(int argc, char *argv[], char *envp[])
 		init_child(0);
 	close(data->pipe[1]);
 	waitpid(data->pid[0], NULL, 0);
-	
 	data->pid[1] = fork();
 	if (data->pid[1] < 0)
 		exit_error("Error creating second child");
@@ -37,7 +34,6 @@ int	main(int argc, char *argv[], char *envp[])
 		init_child(1);
 	close(data->pipe[0]);
 	waitpid(data->pid[1], NULL, 0);
-
 	del_data();
 	return (0);
 }

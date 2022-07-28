@@ -24,7 +24,7 @@
 # include "../libft/include/libft.h"
 
 // Holds the file descriptors and programs
-typedef struct	s_data {
+typedef struct s_data {
 	char	**argv;
 	char	**envp;
 	int		fd_in;
@@ -33,7 +33,6 @@ typedef struct	s_data {
 	pid_t	pid[2];
 	char	**paths;
 }			t_data;
-
 
 t_data	*get_data(void);
 void	init_data(int argc, char *argv[], char *envp[]);
