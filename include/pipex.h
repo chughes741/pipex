@@ -40,8 +40,8 @@ void	exit_error(char *message);
 void	del_data(void);
 void	init_child(int cid);
 char	*ft_str_prepend(char *s1, char *s2);
-
 void	first_child(void);
 void	second_child(void);
+char	**split_arguments(char *args);
 
 #endif

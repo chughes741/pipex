@@ -42,7 +42,7 @@ void	first_child(void)
 	dup2(data->pipe[1], STDOUT_FILENO);
 	close(data->pipe[0]);
 	close(data->pipe[1]);
-	exec_arg = ft_split(data->argv[2], ' ');
+	exec_arg = split_arguments(data->argv[2]);
 	path = get_path(data->paths, exec_arg[0]);
 	execve(path, exec_arg, data->envp);
 }
@@ -59,7 +59,7 @@ void	second_child(void)
 	dup2(data->pipe[0], STDIN_FILENO);
 	close(data->pipe[0]);
 	close(data->pipe[1]);
-	exec_arg = ft_split(data->argv[3], ' ');
+	exec_arg = split_arguments(data->argv[3]);
 	path = get_path(data->paths, exec_arg[0]);
 	execve(path, exec_arg, data->envp);
 }
