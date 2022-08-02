@@ -59,9 +59,9 @@ char	**split_arguments(char *args)
 
 	split_args = ft_split(args, ' ');
 	return_args = ft_calloc(arg_count(split_args) + 1, sizeof(char *));
-	i = 0;
-	j = 0;
-	while (split_args[i])
+	i = -1;
+	j = -1;
+	while (split_args[++i] && ++j > -1)
 	{
 		return_args[j] = ft_strdup(split_args[i]);
 		while (is_quote(return_args[j], 0))
@@ -73,8 +73,6 @@ char	**split_arguments(char *args)
 			return_args[j] = ft_str_prepend(return_args[j], split_args[i]);
 		}
 		return_args[j] = trimfree(return_args[j]);
-		j++;
-		i++;
 	}
 	return (return_args);
 }
