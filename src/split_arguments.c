@@ -58,7 +58,7 @@ char	**split_arguments(char *args)
 	int		j;
 
 	split_args = ft_split(args, ' ');
-	return_args = ft_calloc(arg_count(split_args) + 1, sizeof(char *));
+	return_args = ft_calloc(arg_count(split_args) + 2, sizeof(char *));
 	i = -1;
 	j = -1;
 	while (split_args[++i] && ++j > -1)
