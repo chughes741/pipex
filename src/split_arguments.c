@@ -12,6 +12,7 @@
 
 #include "../include/pipex.h"
 
+// 0/1 return if char at pos is \' || \"
 static int	is_quote(char *str, int pos)
 {
 	int rtn;
@@ -35,48 +36,45 @@ static size_t	arg_count(char **array)
 
 	i = 0;
 	count = 1;
-	while (array[i])
+	while (array[++i])
 	{
-		if (is_quote(array[i], -1))
+		if (is_quote(array[i], 0) && !is_quote(array[i], -1))
 		{
-			i++;
-			count++;
+			while (!is_quote(array[i], -1))
+				i++;
 		}
-		else if (is_quote(array[i], 0))
-			i++;
 		else
-		{
-			i++;
 			count++;
-		}
 	}
 	return (count);
 }
 
+// Split with apostrophe sensitivity
 char	**split_arguments(char *args)
 {
-	char	**arg_array;
-	char	**return_array;
+	char	**split_args;
+	char	**return_args;
 	int		i;
 	int		j;
 
-	arg_array = ft_split(args, ' ');
-	return_array = ft_calloc(arg_count(arg_array) + 1, sizeof(char *));
+	split_args = ft_split(args, ' ');
+	return_args = ft_calloc(arg_count(split_args) + 1, sizeof(char *));
 	i = 0;
 	j = 0;
-	while (arg_array[i])
+	while (split_args[i])
 	{
-		return_array[j] = ft_strdup(arg_array[i]);
-		while (is_quote(return_array[j], 0))
+		return_args[j] = ft_strdup(split_args[i]);
+		while (is_quote(return_args[j], 0))
 		{
-			if (is_quote(arg_array[i], -1))
+			if (is_quote(split_args[i], -1))
 				break ;
 			i++;
-			return_array[j] = ft_str_prepend(return_array[j], arg_array[i]);
+			return_args[j] = ft_str_prepend(return_args[j], " ");
+			return_args[j] = ft_str_prepend(return_args[j], split_args[i]);
 		}
+		return_args[j] = trimfree(return_args[j]);
 		j++;
 		i++;
 	}
-	return (arg_array);
+	return (return_args);
 }
-
