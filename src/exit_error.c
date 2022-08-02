@@ -16,5 +16,5 @@ void	exit_error(char *message)
 {
 	del_data();
 	perror(message);
-	exit(1);
+	exit(-1);
 }
