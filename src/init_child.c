@@ -19,6 +19,13 @@ static char	*get_path(char **paths, char *command)
 	int		i;
 
 	i = -1;
+	path = ft_strdup(command);
+	if (access(path, F_OK) == 0)
+		return (path);
+	path = ft_strjoin("./", command);
+	if (access(path, F_OK) == 0)
+		return (path);
+	free(path);
 	while (paths[++i])
 	{
 		path = ft_strjoin(paths[i], "/");
