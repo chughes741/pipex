@@ -12,6 +12,7 @@
 
 #include "../include/pipex.h"
 
+// Deletes data struct
 void	del_data(void)
 {
 	t_data	*data;

@@ -14,12 +14,7 @@
 # define PIPEX_H
 
 # include <fcntl.h>
-# include <unistd.h>
-# include <stdlib.h>
 # include <stdio.h>
-# include <string.h> 
-# include <sys/wait.h>
-# include <stdint.h> //! For compiling on Linux
 
 # include "../libft/include/libft.h"
 
@@ -42,8 +37,5 @@ void	init_child(int cid);
 char	*ft_str_prepend(char *s1, char *s2);
 void	first_child(void);
 void	second_child(void);
-char	**split_arguments(char *args);
-char	*trimfree(char *str);
-char	**cmd_parse(char *str);
 
 #endif

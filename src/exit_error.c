@@ -12,6 +12,7 @@
 
 #include "../include/pipex.h"
 
+// Writes message to stderr and exits
 void	exit_error(char *message)
 {
 	del_data();

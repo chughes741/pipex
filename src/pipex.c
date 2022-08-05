@@ -12,6 +12,7 @@
 
 #include "../include/pipex.h"
 
+// Replicates unix | operator
 int	main(int argc, char *argv[], char *envp[])
 {
 	t_data	*data;
