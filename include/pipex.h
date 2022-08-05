@@ -44,5 +44,6 @@ void	first_child(void);
 void	second_child(void);
 char	**split_arguments(char *args);
 char	*trimfree(char *str);
+char	**cmd_parse(char *str);
 
 #endif
