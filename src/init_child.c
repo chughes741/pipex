@@ -34,6 +34,7 @@ static char	*get_path(char **paths, char *command)
 			return (path);
 		free(path);
 	}
+	exit_error("Cannot find path to program: ");
 	return (NULL);
 }
 

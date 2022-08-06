@@ -35,11 +35,15 @@ void	init_data(int argc, char *argv[], char *envp[])
 
 	data = get_data();
 	if (argc != 5)
-		exit_error("Error: Too few arguments ");
+		exit_error("Error Too few/many arguments: ");
 	data->argv = argv;
 	data->envp = envp;
 	data->fd_in = open(argv[1], O_RDONLY);
+	if (data->fd_in < 0)
+		exit_error("Error opening input file: ");
 	data->fd_out = open(argv[4], O_RDWR | O_CREAT | O_TRUNC, 0644);
+	if (data->fd_out < 0)
+		exit_error("Error creating output file: ");
 	data->paths = find_path(envp);
 	return ;
 }
